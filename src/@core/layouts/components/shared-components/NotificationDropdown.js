@@ -127,7 +127,7 @@ const NotificationDropdown = () => {
             />
           </Box>
         </MenuItem>
-        <ScrollWrapper>
+        {/* <ScrollWrapper>
           <MenuItem onClick={handleDropdownClose}>
             <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>
               <Avatar alt='Flora' src='/images/avatars/4.png' />
@@ -208,7 +208,7 @@ const NotificationDropdown = () => {
           <Button fullWidth variant='contained' onClick={handleDropdownClose}>
             Read All Notifications
           </Button>
-        </MenuItem>
+        </MenuItem> */}
       </Menu>
     </Fragment>
   )
