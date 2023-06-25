@@ -21,7 +21,6 @@ class CustomDocument extends Document {
             rel='stylesheet'
             href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'
           />
-          <link rel='underc0de-logo' sizes='180x180' href='/images/underc0de-logo.png' />
           <link rel='shortcut icon' href='/images/favicon.ico' />
         </Head>
         <body>
