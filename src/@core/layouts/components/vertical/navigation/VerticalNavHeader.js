@@ -35,9 +35,6 @@ const StyledLink = styled('a')({
 
 const VerticalNavHeader = props => {
   // ** Props
-
-  const { settings, saveSettings } = props
-
   const { verticalNavMenuBranding: userVerticalNavMenuBranding } = props
 
   // ** Hooks
@@ -50,18 +47,9 @@ const VerticalNavHeader = props => {
       ) : (
         <Link href='/' passHref>
           <StyledLink>
-            {settings.mode === 'dark' ? (
-              <>
-                <img alt='underc0de-logo' src='./images/underc0de-logo.png' width={'50px'} />
-                <HeaderTitle variant='h6' sx={{ ml: 3 }}>
-                  {themeConfig.templateName}
-                </HeaderTitle>
-              </>
-            ) : (
-              <HeaderTitle variant='h4' sx={{ ml: 3 }}>
-                {themeConfig.templateName}
-              </HeaderTitle>
-            )}
+            <HeaderTitle variant='h4' sx={{ ml: 3 }}>
+              {themeConfig.templateName}
+            </HeaderTitle>
           </StyledLink>
         </Link>
       )}
