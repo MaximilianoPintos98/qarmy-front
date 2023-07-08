@@ -11,10 +11,10 @@ const ApiService = {
     }
   },
 
-  getCertificate: async (id) => {
+  getCertificate: async (license) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/certificate/${id}`)
-      console.log(response.data)
+      const response = await axios.get(`http://localhost:3000/api/v1/certificate/`, { params: { license } })
+      return response
     } catch (error) {
       console.error('Error retrieving certificates: ', error)
       throw error
