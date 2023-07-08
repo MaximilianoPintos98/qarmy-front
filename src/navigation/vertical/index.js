@@ -13,16 +13,16 @@ import CertificateOutline  from 'mdi-material-ui/CertificateOutline'
 
 const navigation = () => {
   return [
-    {
-      title: 'Dashboard',
-      icon: HomeOutline,
-      path: '/'
-    },
-    {
-      title: 'Certificados',
-      icon: CertificateOutline,
-      path: '/certificates'
-    }
+    // {
+    //   title: 'Certificado',
+    //   icon: CertificateOutline,
+    //   path: '/'
+    // },
+    // {
+    //   title: 'Admin',
+    //   icon: HomeOutline,
+    //   path: '/certificates'
+    // }
     // {
     //   title: 'Account Settings',
     //   icon: AccountCogOutline,

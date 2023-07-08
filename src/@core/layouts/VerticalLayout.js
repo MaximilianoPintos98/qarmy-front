@@ -9,12 +9,8 @@ import Box from '@mui/material/Box'
 // ** Icons Imports
 import ArrowUp from 'mdi-material-ui/ArrowUp'
 
-// ** Theme Config Import
-import themeConfig from 'src/configs/themeConfig'
-
 // ** Components
 import AppBar from './components/vertical/appBar'
-import Navigation from './components/vertical/navigation'
 import Footer from './components/shared-components/footer'
 import ScrollToTop from 'src/@core/components/scroll-to-top'
 
@@ -51,7 +47,6 @@ const VerticalLayout = props => {
 
   // ** Vars
   const { contentWidth } = settings
-  const navWidth = themeConfig.navigationSize
 
   // ** States
   const [navVisible, setNavVisible] = useState(false)
@@ -62,13 +57,6 @@ const VerticalLayout = props => {
   return (
     <>
       <VerticalLayoutWrapper className='layout-wrapper'>
-        <Navigation
-          navWidth={navWidth}
-          navVisible={navVisible}
-          setNavVisible={setNavVisible}
-          toggleNavVisibility={toggleNavVisibility}
-          {...props}
-        />
         <MainContentWrapper className='layout-content-wrapper'>
           <AppBar toggleNavVisibility={toggleNavVisibility} {...props} />
 
@@ -87,9 +75,7 @@ const VerticalLayout = props => {
 
           <Footer {...props} />
 
-          <DatePickerWrapper sx={{ zIndex: 11 }}>
-            <Box id='react-datepicker-portal'></Box>
-          </DatePickerWrapper>
+
         </MainContentWrapper>
       </VerticalLayoutWrapper>
 
