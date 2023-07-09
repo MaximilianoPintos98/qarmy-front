@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
-import Swal from 'sweetalert2';
-
+import { useEffect } from 'react'
+import Swal from 'sweetalert2'
 
 const CustomAlert = ({ type, message, position, timer, showConfirmButton, toast }) => {
   useEffect(() => {
@@ -16,11 +15,11 @@ const CustomAlert = ({ type, message, position, timer, showConfirmButton, toast 
       }).fire({
         icon: type,
         title: message
-      });
+      })
     }
-  }, [type, message, position, timer, showConfirmButton, toast]);
+  }, [type, message, position, timer, showConfirmButton, toast])
 
-  return null;
-};
+  return null
+}
 
-export default CustomAlert;
+export default CustomAlert

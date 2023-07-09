@@ -17,13 +17,14 @@ import {
   ListItemAvatar,
   ListItemText,
   TextField,
-  Typography, 
+  Typography,
   Grid
 } from '@mui/material'
 import CustomAlert from 'src/layouts/components/alert/CustomAlert'
 import { CertificateOutline } from 'mdi-material-ui'
 import { format } from 'date-fns'
 
+require('dotenv').config()
 
 const Dashboard = () => {
   const [inputValue, setInputValue] = useState('')
@@ -159,7 +160,10 @@ const Dashboard = () => {
                       <ListItemText primary='Fecha' secondary={format(new Date(certificate.date), 'dd-MM-yyyy')} />
                     </Grid>
                     <Grid item>
-                      <ListItemText primary='Nombre y Apellido' secondary={certificate.first_name + ' ' + certificate.last_name} />
+                      <ListItemText
+                        primary='Nombre y Apellido'
+                        secondary={certificate.first_name + ' ' + certificate.last_name}
+                      />
                     </Grid>
                     <Grid item>
                       <ListItemText primary='Curso' secondary={certificate.course} />
