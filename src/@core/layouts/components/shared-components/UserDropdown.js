@@ -30,6 +30,7 @@ const BadgeContentSpan = styled('span')(({ theme }) => ({
 const UserDropdown = () => {
   // ** States
   const [anchorEl, setAnchorEl] = useState(null)
+  
   const [user, setUser] = useState({
     first_name: '',
     last_name: ''

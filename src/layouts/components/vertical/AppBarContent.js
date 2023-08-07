@@ -11,6 +11,7 @@ import UserDropdown from 'src/@core/layouts/components/shared-components/UserDro
 const AppBarContent = props => {
   // ** Props
   const { settings, saveSettings } = props
+  
   const [user, setUser] = useState({
     first_name: '',
     last_name: ''

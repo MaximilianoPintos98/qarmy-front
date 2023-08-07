@@ -8,7 +8,7 @@ const SearchComponent = ({ searchValues, handleSearchChange }) => {
           size='small'
           label='Nombre'
           name='first_name'
-          value={searchValues.first_name}
+          value={searchValues?.first_name}
           onChange={handleSearchChange}
         />
       </Grid>
@@ -17,7 +17,7 @@ const SearchComponent = ({ searchValues, handleSearchChange }) => {
           size='small'
           label='Apellido'
           name='last_name'
-          value={searchValues.last_name}
+          value={searchValues?.last_name}
           onChange={handleSearchChange}
         />
       </Grid>
@@ -26,15 +26,15 @@ const SearchComponent = ({ searchValues, handleSearchChange }) => {
           size='small'
           label='Matricula'
           name='license'
-          value={searchValues.license}
+          value={searchValues?.license}
           onChange={handleSearchChange}
         />
       </Grid>
       <Grid item xs={2} sx={{ margin: '10px' }}>
-        <TextField size='small' label='Curso' name='course' value={searchValues.course} onChange={handleSearchChange} />
+        <TextField size='small' label='Curso' name='course' value={searchValues?.course} onChange={handleSearchChange} />
       </Grid>
       <Grid item xs={2} sx={{ margin: '10px' }}>
-        <TextField size='small' label='Nota' name='note' value={searchValues.note} onChange={handleSearchChange} />
+        <TextField size='small' label='Nota' name='note' value={searchValues?.note} onChange={handleSearchChange} />
       </Grid>
     </Grid>
   )

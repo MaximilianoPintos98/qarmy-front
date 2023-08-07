@@ -49,12 +49,12 @@ const ModalEditCertificate = ({ onOpen, onClose, Certificate }) => {
   const onEdit = () => {
     ApiService.updateCertificate(formData.id, formData)
       .then(() => {
-        setShowAlertSuccess(true);
+        setShowAlertSuccess(true)
         onClose()
       })
       .catch(() => {
-        setShowAlertError(true);
-      });
+        setShowAlertError(true)
+      })
   }
 
   return (
@@ -152,6 +152,18 @@ const ModalEditCertificate = ({ onOpen, onClose, Certificate }) => {
                     label='Apellido'
                     variant='outlined'
                     value={formData?.last_name || ''}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    sx={{ wordBreak: 'keep-all'}}
+                    onChange={onChange}
+                    fullWidth
+                    multiline
+                    name='description'
+                    label='Descripcion'
+                    variant='outlined'
+                    value={formData?.description || ''}
                   />
                 </Grid>
                 <Grid item xs={12} display={'flex'} sx={{ justifyContent: 'end' }}>

@@ -5,7 +5,7 @@ import CustomAlert from 'src/layouts/components/alert/CustomAlert'
 import Swal from 'sweetalert2'
 
 // MUI Imports
-import { Box, Button, Grid, Modal, TextField } from '@mui/material'
+import { Box, Button, Grid, Modal, TextField, TextareaAutosize } from '@mui/material'
 import { DesktopDatePicker, LocalizationProvider } from '@mui/lab'
 import AdapterDateFns from '@mui/lab/AdapterDateFns'
 
@@ -32,7 +32,8 @@ const ModalCreateCertificate = ({ onOpen, onClose }) => {
     first_name: '',
     last_name: '',
     date: '',
-    license: ''
+    license: '',
+    description: ''
   })
 
   const [formErrors, setFormErrors] = useState({
@@ -42,7 +43,8 @@ const ModalCreateCertificate = ({ onOpen, onClose }) => {
     note: false,
     first_name: false,
     last_name: false,
-    date: false
+    date: false,
+    description: false
   })
 
   const [selectedDate, setSelectedDate] = useState(null)
@@ -94,6 +96,7 @@ const ModalCreateCertificate = ({ onOpen, onClose }) => {
 
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors)
+      
       return
     }
 
@@ -212,6 +215,19 @@ const ModalCreateCertificate = ({ onOpen, onClose }) => {
                   value={selectedDate}
                   onChange={handleDateChange}
                   renderInput={params => <TextField {...params} />}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  onChange={onChange}
+                  onFocus={() => onFocus('description')}
+                  fullWidth
+                  multiline
+                  name='description'
+                  label='Descripcion'
+                  variant='outlined'
+                  error={formErrors.description}
+                  helperText={formErrors.description && 'Este campo es requerido.'}
                 />
               </Grid>
               <Grid item xs={12} display={'flex'} sx={{ justifyContent: 'end' }}>

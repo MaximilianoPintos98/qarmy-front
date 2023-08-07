@@ -14,9 +14,6 @@ import AppBar from './components/vertical/appBar'
 import Footer from './components/shared-components/footer'
 import ScrollToTop from 'src/@core/components/scroll-to-top'
 
-// ** Styled Component
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
 const VerticalLayoutWrapper = styled('div')({
   height: '100%',
   display: 'flex'
