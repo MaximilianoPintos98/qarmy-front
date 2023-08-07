@@ -1,6 +1,6 @@
 {
-  "name": "materio-mui-react-nextjs-admin-template-free",
-  "description": "Most Powerful & Comprehensive Free MUI React NextJS Admin Dashboard Template built for developers! 🚀",
+  "name": "qarmy-certificates",
+  "description": "Welcome to QARMY! 🚀",
   "license": "MIT",
   "version": "1.0.0",
   "author": {
@@ -50,32 +50,26 @@
     "@emotion/styled": "^11.6.0",
     "@mui/lab": "^5.0.0-alpha.70",
     "@mui/material": "^5.4.3",
-    "@popperjs/core": "^2.11.2",
-    "apexcharts-clevision": "3.28.5",
     "axios": "^1.4.0",
     "babel-eslint": "^10.1.0",
-    "clsx": "^1.1.1",
+    "cookie": "^0.5.0",
     "date-fns": "^2.30.0",
-    "eslint-plugin-react": "^7.29.4",
+    "dotenv": "^16.3.1",
+    "eslint-plugin-react": "^7.25.3",
+    "jsonwebtoken": "^9.0.1",
     "mdi-material-ui": "^7.1.0",
-    "next": "12.0.4",
+    "next": "^13.4.9",
     "nprogress": "^0.2.0",
-    "react": "17.0.2",
-    "react-apexcharts": "^1.3.9",
-    "react-datepicker": "^4.5.0",
-    "react-dom": "17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-perfect-scrollbar": "^1.5.8",
-    "react-popper": "^2.2.5",
-    "sweetalert2": "^11.7.12"
+    "sweetalert2": "^11.4.8"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-next": "12.0.4",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
-    "next-transpile-modules": "^9.0.0",
     "prettier": "2.5.1"
   }
 }

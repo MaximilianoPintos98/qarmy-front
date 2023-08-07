@@ -17,19 +17,22 @@ import {
   ListItemAvatar,
   ListItemText,
   TextField,
-  Typography, 
+  Typography,
   Grid
 } from '@mui/material'
 import CustomAlert from 'src/layouts/components/alert/CustomAlert'
 import { CertificateOutline } from 'mdi-material-ui'
 import { format } from 'date-fns'
 
+require('dotenv').config()
 
 const Dashboard = () => {
   const [inputValue, setInputValue] = useState('')
   const [certificate, setCertificate] = useState(null)
   const [showAlertError, setShowAlertError] = useState(false)
   const [showAlertNotFound, setShowAlertNotFound] = useState(false)
+  const [descriptionItems, setDescriptionItems] = useState([])
+
   const theme = useTheme()
   const isLightTheme = theme.palette.mode === 'light'
 
@@ -47,6 +50,7 @@ const Dashboard = () => {
       if (inputValue === '') {
         setShowAlertError(true)
         setCertificate(null)
+
         return
       }
 
@@ -54,10 +58,12 @@ const Dashboard = () => {
       console.log(response)
       if (response.data.data[0] === undefined) {
         setShowAlertNotFound(true)
+        
         return
       }
 
       setCertificate(response.data.data[0])
+      setDescriptionItems(response.data.data[0].description.split('\n'))
       setShowAlertError(false)
       setShowAlertNotFound(false)
       setInputValue('')
@@ -78,7 +84,7 @@ const Dashboard = () => {
           toast={false}
         />
       )}
-      <Card sx={{ border: '1px solid', boxShadow: '0px 0px 15px 0px' }}>
+      <Card sx={{ border: '1px solid #212529'}}>
         <CardContent>
           <Box textAlign='center'>
             <CardMedia
@@ -136,7 +142,7 @@ const Dashboard = () => {
               <List
                 sx={{
                   width: '100%',
-                  maxWidth: 360,
+                  maxWidth: 1100,
                   bgcolor: 'background.paper',
                   margin: 'auto',
                   border: '1px solid',
@@ -151,24 +157,56 @@ const Dashboard = () => {
                       <CertificateOutline />
                     </Avatar>
                   </ListItemAvatar>
-                  <Grid container direction='column'>
-                    <Grid item>
-                      <ListItemText primary='Matricula' secondary={certificate.license} />
+                  <Grid container direction='row'>
+                    <Grid item sx={{ padding: '20px' }}>
+                      <ListItemText
+                        primary='Matricula'
+                        secondary={certificate.license}
+                        primaryTypographyProps={{ fontWeight: 'bold' }}
+                      />
                     </Grid>
-                    <Grid item>
-                      <ListItemText primary='Fecha' secondary={format(new Date(certificate.date), 'dd-MM-yyyy')} />
+                    <Grid item sx={{ padding: '20px' }}>
+                      <ListItemText
+                        primary='Fecha'
+                        secondary={format(new Date(certificate.date), 'dd-MM-yyyy')}
+                        primaryTypographyProps={{ fontWeight: 'bold' }}
+                      />
                     </Grid>
-                    <Grid item>
-                      <ListItemText primary='Nombre y Apellido' secondary={certificate.first_name + ' ' + certificate.last_name} />
+                    <Grid item sx={{ padding: '20px' }}>
+                      <ListItemText
+                        primary='Nombre y Apellido'
+                        secondary={certificate.first_name + ' ' + certificate.last_name}
+                        primaryTypographyProps={{ fontWeight: 'bold' }}
+                      />
                     </Grid>
-                    <Grid item>
-                      <ListItemText primary='Curso' secondary={certificate.course} />
+                    <Grid item sx={{ padding: '20px' }}>
+                      <ListItemText
+                        primary='Curso'
+                        secondary={certificate.course}
+                        primaryTypographyProps={{ fontWeight: 'bold' }}
+                      />
                     </Grid>
-                    <Grid item>
-                      <ListItemText primary='Nota' secondary={certificate.note} />
+                    <Grid item sx={{ padding: '20px' }}>
+                      <ListItemText
+                        primary='Nota'
+                        secondary={certificate.note}
+                        primaryTypographyProps={{ fontWeight: 'bold' }}
+                      />
                     </Grid>
-                    <Grid item>
-                      <ListItemText primary='Dni' secondary={certificate.dni} />
+                    <Grid item sx={{ padding: '20px' }}>
+                      <ListItemText
+                        primary='Dni'
+                        secondary={certificate.dni}
+                        primaryTypographyProps={{ fontWeight: 'bold' }}
+                      />
+                    </Grid>
+                    <Grid item sx={{ paddingLeft: '20px' }}>
+                      <List>
+                        <strong>Descripción del cursado:</strong>
+                        {descriptionItems.map((item, index) => (
+                          <ListItem key={index}>{item}</ListItem>
+                        ))}
+                      </List>
                     </Grid>
                   </Grid>
                 </ListItem>

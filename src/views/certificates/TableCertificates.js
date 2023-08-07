@@ -25,6 +25,7 @@ import TrashCanOutline from 'mdi-material-ui/TrashCanOutline'
 
 const TableCertificates = () => {
   const pageSizeOptions = [5, 10, 20, 50, 100]
+
   const defaultSearchValues = {
     first_name: '',
     last_name: '',
@@ -33,6 +34,7 @@ const TableCertificates = () => {
     note: '',
     date: ''
   }
+  
   const [certificates, setCertificates] = useState([])
   const [openEdit, setOpenEdit] = useState(false)
   const [openCreate, setOpenCreate] = useState(false)

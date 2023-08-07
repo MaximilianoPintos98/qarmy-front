@@ -4,6 +4,7 @@ const ApiService = {
   getCertificates: async (params) => {
     try {
       const response = await axios.get('http://localhost:3000/api/v1/certificate', { params });
+      
       return response.data;
     } catch (error) {
       console.error('Error retrieving certificates: ', error);
@@ -14,6 +15,7 @@ const ApiService = {
   getCertificate: async (license) => {
     try {
       const response = await axios.get(`http://localhost:3000/api/v1/certificate/`, { params: { license } })
+
       return response
     } catch (error) {
       console.error('Error retrieving certificates: ', error)
